@@ -1149,7 +1149,9 @@
         if (_.options.vertical === false) {
             targetLeft = ((slideIndex * _.slideWidth) * -1) + _.slideOffset;
         } else {
-            targetLeft = ((slideIndex * verticalHeight) * -1) + verticalOffset;
+            if (_.slideCount < _.slidesToShow) {
+                targetLeft = ((slideIndex * verticalHeight) * -1) + verticalOffset;
+            }
         }
 
         if (_.options.variableWidth === true) {
